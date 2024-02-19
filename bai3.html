@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+
+</body>
+<script>
+    function taoMang(soMang)
+    {
+        var mang=[]
+
+        for(let i=0;i<soMang;i++)
+        {
+            var phanTu=parseInt(prompt("Hãy nhập phần tử thứ " +i+ " vào mảng."))
+            mang.push(phanTu)
+        }
+        return mang
+    }
+
+    function kiemTraSoNguyenToTrongMang(num)
+    {
+        if (num<=1)
+        {
+            return false
+        }
+
+        for (let i=2;i <= Math.sqrt(num); i++)
+        {
+            if(num % i === 0)
+            {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    function tinhTongSoNguyenTo(mang)
+    {
+        var tong=0
+
+        for(let i=0; i<mang.length; i++)
+        {
+            if(kiemTraSoNguyenToTrongMang(mang[i]))
+            {
+                tong= tong + mang[i]
+            }
+        }
+
+        return tong
+    }
+
+    function main()
+    {
+        var soMang=parseInt(prompt("Hãy nhập số phần tử của mảng: "))
+        var mang=taoMang(soMang)
+        var tongSoNguyenTo=tinhTongSoNguyenTo(mang)
+        alert(mang)
+        alert("Tổng các số nguyên tố trong mang là: " +tongSoNguyenTo)
+    }
+
+    main()
+</script>
+</html>

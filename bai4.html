@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+
+</body>
+<script>
+    function kiemTraSoNguyenTo(num)
+    {
+        if (num<=1)
+        {
+            return false
+        }
+
+        for (let i=2;i <= Math.sqrt(num); i++)
+        {
+            if(num % i === 0)
+            {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    function tinhTongSoNguyenTo()
+    {
+        var tong=0
+
+        for(let i=0; i<500; i++)
+        {
+            if(kiemTraSoNguyenTo(i))
+            {
+                tong= tong + i
+            }
+        }
+
+        return tong
+    }
+
+    function main()
+    {
+        var tongCacSoNguyenTo=tinhTongSoNguyenTo()
+        alert("Tổng các số nguyên tố: "+tongCacSoNguyenTo)
+    }
+
+    main()
+</script>
+</html>
